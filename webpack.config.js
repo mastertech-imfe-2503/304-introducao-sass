@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
     entry: [
+        './src/scss/main.scss',
         './src/js/scripts.js'
     ],
     output: {
@@ -16,6 +17,18 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 }
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'bundle.min.css'
+                        }
+                    },
+                    'sass-loader'
+                ]
             }
         ]
     },
