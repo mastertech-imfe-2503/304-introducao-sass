@@ -1,9 +1,93 @@
 header {
-    background-color: lightgray;
+    align-items: center;
+    display: flex;
+    height: $header-height;
+    justify-content: space-between;
 
-    @media (min-width: $breakpoint-xl) {
-        background-color: azure;
+    .uppercase {
+        text-transform: uppercase;
     }
 
-    
+    & > div {
+        align-items: center;
+        border: 1px solid #e6e6e6;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+
+        &:nth-child(1) {
+            align-items: center;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            padding: 0 10px;
+            width: 90px;
+
+            .menu-icon {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                margin: 0 10px 0 0;
+                justify-content: center;
+                width: 15px;
+
+                .dash {
+                    background-color: black;
+                    height: 1.75px;
+                    margin: 2px 0;
+                    transition: 0.4s;
+                    width: 100%;
+
+                    &:nth-child(1), &:nth-child(3) {
+                        transform-origin: center right;
+                    }
+                }
+
+                &.active {
+                    .dash {
+                        &:nth-child(1) {
+                            transform: rotateZ(-45deg);
+                        }
+                        
+                        &:nth-child(2) {
+                            opacity: 0;
+                        }
+                        
+                        &:nth-child(3) {
+                            transform: rotateZ(45deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            width: 90%;
+
+            h2 {
+                font-size: 16pt;
+            }
+        }
+
+        &.join-us {
+            background-color: #49c5b6;
+            color: white;
+            cursor: pointer;
+            padding: 0 10px;
+            width: 200px;
+
+            &:hover {
+                background-color: #3c9e93;
+            }
+
+            p {
+                margin: 0;
+                text-align: center;
+            }
+        }
+    }
 }
