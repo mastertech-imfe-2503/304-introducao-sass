@@ -1,0 +1,9 @@
+header {
+    background-color: lightgray;
+
+    @media (min-width: $breakpoint-xl) {
+        background-color: azure;
+    }
+
+    
+}

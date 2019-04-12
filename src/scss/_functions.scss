@@ -1,0 +1,3 @@
+@function getWidth ($element, $container) {
+    @return ($element/$container) * 100%;
+}

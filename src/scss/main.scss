@@ -1,0 +1,48 @@
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+@import 'header';
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.teste {
+    @include flex-perfect-center();
+
+    & > p {
+        color: burlywood;
+
+        &:nth-child(1) {
+            @include transform(rotate(90deg));
+
+            color: $primary-color;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &:nth-child(2) {
+            color: yellow;
+        }
+
+        &:hover {
+            color: $primary-color;
+
+            &:not(:nth-child(1)) {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    ul {
+        @include box-shadow(0 0 7px 0px rgba(0, 0, 0, 0.5));
+        background-color: green;
+
+        li {
+            color: goldenrod;
+        }
+    }
+}
